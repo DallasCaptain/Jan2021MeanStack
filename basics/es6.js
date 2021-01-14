@@ -28,7 +28,7 @@
 function md(flower, sugar, dog){
     //mixing ingreditions
 
-    cookiedough = 'chocolate chip cookie'
+    cookiedough = 'chocolate chip cookies'
     return(dog(cookiedough))
 
 }

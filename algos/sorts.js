@@ -34,22 +34,24 @@
 // console.log(selectionSort([3,5,8,4,2,9]))
 
 
-function insertsort(arr){
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i]< arr[i-1]){
-            //shift right until arr[i] >= arr[i-1]
-            temp = arr[i]
-            for(let y = i; y >= 0;y--){
-                if(arr[y-1] < temp || y == 0){
-                    arr[y] = temp
-                    break
-                }else{
-                    arr[y] = arr[y-1]
-                }
-            }
-        }
-    }
-return arr
-}
+// function insertsort(arr){
+//     for(let i = 1; i < arr.length; i++){
+//         if(arr[i]< arr[i-1]){
+//             //shift right until arr[i] >= arr[i-1]
+//             temp = arr[i]
+//             for(let y = i; y >= 0;y--){
+//                 if(arr[y-1] < temp || y == 0){
+//                     arr[y] = temp
+//                     break
+//                 }else{
+//                     arr[y] = arr[y-1]
+//                 }
+//             }
+//         }
+//     }
+// return arr
+// }
 
-console.log(insertsort([1,7,8,4,3,6,0,2,3]))
+// console.log(insertsort([1,7,8,4,3,6,0,2,3]))
+
+
