@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socketfun page</title>
+</head>
+<body>
+    <h1>Welcome to socket fun</h1>
+    <div id='counter'>0</div>
+
+    <input type="text" name="text" id="typefield">
+
+    <button id='update'>Update</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        var counter = document.getElementById('counter')
+        var update = document.getElementById('update')
+        var typefield = document.getElementById('typefield')
+
+        typefield.addEventListener('keyup',()=>{
+            //console.log('sending update request')
+            socket.emit('updaterequested',typefield.value)
+        })
+        var socket = io();
+        socket.on('hello',(msg)=>{
+            console.log('recieved msg:', msg)
+        })
+
+        socket.on('setcounter',(num)=>{
+            counter.innerHTML = num
+        })
+
+        socket.on('updatefield',(text)=>{
+            typefield.value = text
+        })
+    </script>
+
+    <style>
+        input{border: 1px solid black;}
+    </style>
+</body>
+</html>
