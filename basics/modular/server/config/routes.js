@@ -11,4 +11,8 @@ module.exports = function(app){
         res.sendfile('home.html')
     })
 
+    app.post('/thanks',(req,res)=>{
+        Users.thanks(req,res)
+    })
+
 }
