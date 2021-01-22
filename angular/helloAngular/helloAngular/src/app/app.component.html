@@ -1,4 +1,8 @@
 <h1>Hello Class!!!</h1>
-<button (click)='getTasks()'>GetTasks</button>
+<button (click)='getKittens()'>GetKittens</button>
+<button (click)='toggleshow()'>Toggle Kittens</button>
+<div *ngIf='show'>
+    <app-kitten *ngFor='let kitten of kittens' [kitten]='kitten' ></app-kitten>
+</div>
 
 <router-outlet></router-outlet>
