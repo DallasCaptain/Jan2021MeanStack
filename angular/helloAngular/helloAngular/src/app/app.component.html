@@ -2,7 +2,20 @@
 <button (click)='getKittens()'>GetKittens</button>
 <button (click)='toggleshow()'>Toggle Kittens</button>
 <div *ngIf='show'>
-    <app-kitten *ngFor='let kitten of kittens' [kitten]='kitten' ></app-kitten>
+    <div *ngFor='let kitten of kittens; index as i;'  id='catdiv'>
+        <app-kitten  [kitten]='kitten' ></app-kitten>
+        <button (click)='updatecat(i)'>Update</button>
+        <button [routerLink]="['/kittens',i]">Goto {{kitten.name}}</button>
+    </div>
+</div>
+
+
+<div id='formarea'>
+    <form (submit)='submitForm()'>
+        <input type="text" name="name" [(ngModel)]="newcat.name">
+        <input type="submit" value="submit">
+    </form>
+
 </div>
 
 <router-outlet></router-outlet>

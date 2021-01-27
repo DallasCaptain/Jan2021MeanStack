@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-kitten',
@@ -9,9 +10,14 @@ export class KittenComponent implements OnInit {
 
   @Input()kitten:{name:string};
 
-  constructor() { }
+  constructor(private _httpService:HttpService) { }
 
   ngOnInit() {
+  }
+
+  
+  feed(){
+    this.kitten.name += ' the well fed'
   }
 
 }

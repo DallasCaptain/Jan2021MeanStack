@@ -1,0 +1,4 @@
+<p>parent works!</p>
+<h3>{{thingToUpdate}}</h3>
+<button *ngIf='!childIsHappy' (click)='comfortChild()'>Comfort Child</button>
+<app-child (startScreaming)= 'childIsScreaming($event)'></app-child>
